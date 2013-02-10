@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>html5video - HTML5 video player jQuery plugin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="assets/app.css" rel="stylesheet" />
+        <script src="http://code.jquery.com/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="jquery.html5video.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                 $("#demo1").html5video({
+                    controls : false,
+                    autoplay : false,
+                    playSelector : $('#play'),
+                    pauseSelector : $('#pause'),
+                    stopSelector : $('#stop'),
+                    fullSelector : $('#fullScreen'),
+                    timerSelector : $('#timer'),
+                    durationSelector : $('#duration'),
+                    barSelector : $('#bar')
+                });
+    
+
+    
+                $('#gotoAndPlay').change(function(){
+                     $("#demo1").html5video('gotoAndPlay',$(this).val());       
+                });
+
+                $('#gotoAndStop').change(function(){
+                     $("#demo1").html5video('gotoAndStop',$(this).val());
+                });
+    
+                $('#volume').change(function(){
+                     $("#demo1").html5video('setVolume',$(this).val());
+                });
+
+            })
+        </script>
+    </head>
+    <body>
+        <header class="row">
+            <div class="twelve columns">
+                <h1><a href="./">html5video()</a></h1>
+                <h4>a jQuery plugin to easily control &amp; customize your HTML5 video player</h4>
+                <hr/>
+            </div>
+        </header>
+        <div class="row">
+            <div class="eight columns">
+                <h2>Usage</h2>
+                <h3>HTML markup structure</h3>
+                <blockquote>
+                    &lt;video width=&quot;370&quot; height=&quot;214&quot;  id=&quot;demo1&quot;&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&lt;source src=&quot;assets/video/demo.ogv&quot; type=&quot;video/ogg&quot;&gt; <br/>
+                    &nbsp;&nbsp;&nbsp;&lt;source src=&quot;assets/video/demo.webm&quot; type=&quot;video/webm&quot;&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&lt;source src=&quot;assets/video/demo.mp4&quot; type=&quot;video/mp4&quot;&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;Your browser does not support the video tag.<br/>
+                    &lt;/video&gt;
+                </blockquote>
+                <h3>javascript</h3>
+                <blockquote>
+                    $("#demo1").html5video({<br/>
+                    &nbsp;&nbsp;&nbsp;controls : false,<br/>
+                    &nbsp;&nbsp;&nbsp;autoplay : false,<br/>
+                    &nbsp;&nbsp;&nbsp;playSelector : $('#play'),<br/>
+                    &nbsp;&nbsp;&nbsp;pauseSelector : $('#pause'),<br/>
+                    &nbsp;&nbsp;&nbsp;stopSelector : $('#stop'),<br/>
+                    &nbsp;&nbsp;&nbsp;fullSelector : $('#fullScreen'),<br/>
+                    &nbsp;&nbsp;&nbsp;timerSelector : $('#timer'),<br/>
+                    &nbsp;&nbsp;&nbsp;durationSelector : $('#duration'),<br/>
+                    &nbsp;&nbsp;&nbsp;barSelector : $('#bar')<br/>
+                    });
+                </blockquote>
+                <h2>Settings</h2>
+                <table class="twelve">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">Property</th>
+                            <th style="width: 10%">Default</th>
+                            <th style="width: 70%">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>controls</td>
+                            <td>false</td>
+                            <td>show / hide video controls</td>
+                        </tr>
+                        <tr>
+                            <td>autoplay</td>
+                            <td>false</td>
+                            <td>Sets video should start playing as soon as it is loaded</td>
+                        </tr>
+                        <tr>
+                            <td>playSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector trigger playing video</td>
+                        </tr>
+                        <tr>
+                            <td>pauseSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector trigger pausing video</td>
+                        </tr>
+                        <tr>
+                            <td>stopSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector trigger stoping video</td>
+                        </tr>
+                        <tr>
+                            <td>fullSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector trigger full screen mode</td>
+                        </tr>
+                        <tr>
+                            <td>timerSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector current time container</td>
+                        </tr>
+                        <tr>
+                            <td>durationSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector video duration container</td>
+                        </tr>
+                        <tr>
+                            <td>barSelector</td>
+                            <td>null</td>
+                            <td>jQuery selector progress bar container</td>
+                        </tr>
+                        <tr>
+                            <td>volume</td>
+                            <td>0.5</td>
+                            <td>set volume</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Methods</h2>
+                <h3>gotoAndPlay</h3>
+                <blockquote>('#demo1').html5video('gotoAndPlay',10);</blockquote>
+                <h3>gotoAndStop</h3>
+                <blockquote>('#demo1').html5video('gotoAndStop',10);</blockquote>
+                <h3>setVolume</h3>
+                <blockquote>('#demo1').html5video('setVolume',0.4);</blockquote>
+            </div>
+            <div class="four columns">
+                <div class="row">
+                    <video   id="demo1" class="twelve">
+                        <source src="assets/video/demo.ogv" type="video/ogg"> 
+                        <source src="assets/video/demo.webm" type="video/webm">
+                        <source src="assets/video/demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div><br/>
+                <div class="row">
+                    <a href="#" id="play">play</a>&nbsp;
+                    <a href="#" id="pause">pause</a>&nbsp;
+                    <a href="#" id="stop">stop</a>   &nbsp;            
+                    <a href="#" id="fullScreen">full-screen</a>
+                </div><br/>
+                <div class="row">
+                    <label>
+                        Go to and play
+                        <select id="gotoAndPlay" class="three">
+                            <option value="0">0 s</option>
+                            <option value="10">10 s</option>
+                            <option value="20">20 s</option>
+                            <option value="30">30 s</option>
+                            <option value="40">40 s</option>
+                            <option value="50">50 s</option>
+                        </select>
+                    </label>
+                </div><br/>
+                <div class="row">
+                    <label>
+                        Go to and stop
+                        <select id="gotoAndStop" class="three">
+                            <option value="0">0 s</option>
+                            <option value="10">10 s</option>
+                            <option value="20">20 s</option>
+                            <option value="30">30 s</option>
+                            <option value="40">40 s</option>
+                            <option value="50">50 s</option>
+                        </select>
+                    </label>
+                </div><br/>
+                <div class="row">
+                    <label>
+                        Volume
+                        <select id="volume" class="three">
+                            <option value="0">0</option>
+                            <option value="0.1">0.1</option>
+                            <option value="0.2">0.2</option>
+                            <option value="0.3">0.3</option>
+                            <option value="0.4">0.4</option>
+                            <option value="0.5">0.5</option>
+                            <option value="0.6">0.6</option>
+                            <option value="0.7">0.7</option>
+                            <option value="0.8">0.8</option>
+                            <option value="0.9">0.9</option>
+                            <option value="1">1</option>
+                        </select>
+                    </label>
+                </div><br/>
+
+                <div class="row">
+                    <span id="timer"></span> / <span id="duration"></span><br/>
+                </div><br/>
+                <div class="row">
+                    <div id="bar" style="width: 200px ; height: 10px ; border: 1px solid #ccc; padding: 1px"></div>
+                </div><br/>
+                
+                <div class="row">
+                <h5><a href="http://www.w3schools.com/tags/ref_av_dom.asp" target="_blank">HTML Audio/Video DOM Reference</a></h5>
+                </div>
+            </div>
+
+            <hr/>
+            <footer>
+                <p>follow us on twitter <a href="https://twitter.com/html5_ninja" target="_blank">@html5_ninja</a>, on <a href="https://www.facebook.com/Html5Ninja" target="_blank">Facebook</a> &amp; on <a href="https://plus.google.com/107385672780395752994" target="_blank">Google+</a></p>
+                <p>Author: zied.hosni.mail@gmail.com <span class="right">© <a href="http://html5-ninja.com/" target="_blank">html5-ninja.com</a></span></p>
+
+            </footer>
+        </div>
+    </body>
+</html>

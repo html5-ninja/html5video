@@ -1,0 +1,8 @@
+@import 'foundation.min.css';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+h1, h2, h3, h4, h5 {
+font-family: "Open Sans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+font-weight: 100;
+}
+h4{color:#6f6f6f;line-height: 20px}
