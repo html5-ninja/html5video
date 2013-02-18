@@ -1,12 +1,12 @@
 {
-    "name": "html5video",
+    "name": "manifest",
     "title": "jQuery html5video",
     "description": "html5video a jQuery plugin to easily control & customize your HTML5 video player.",
     "keywords": [
         "html5",
         "video"
     ],
-    "version": "1.0",
+    "version": "1.0.0",
     "author": {
         "name": "HTML5 Ninja",
         "url": "http://html5-ninja.com/"
